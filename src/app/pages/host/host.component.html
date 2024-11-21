@@ -1,1 +1,228 @@
-<p>host works!</p>
+<div class="visitor-data max-w-3xl mx-auto">
+  <form [formGroup]="registerFormHost" (ngSubmit)="onSubmit(registerFormHost)">
+    <app-main-desing-form
+      [firstInputInPage]="true"
+      [title]="'Host\'s Full Name'"
+    >
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          formControlName="hostFullName"
+          type="text"
+          id="floating_hostName"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        />
+        <label
+          for="floating_hostName"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Host's Full Name</label
+        >
+      </div>
+      <div class="handel-error">
+        @if (hostFullName?.errors?.['required'] && registerFormHost.touched ) {
+
+        <!-- Error messages -->
+        <p
+          id="standard_error_help"
+          class="mt-2 text-xs text-red-600 dark:text-red-400"
+        >
+          <span class="font-medium">Oh, snapp!</span> must enter Host name
+        </p>
+        }
+      </div>
+      <div class="handel-success">
+        @if (!hostFullName?.errors?.['required'] && registerFormHost.touched ) {
+
+        <!-- success messages -->
+        <p
+          id="filled_success_help"
+          class="mt-2 text-xs text-green-600 dark:text-green-400"
+        >
+          <span class="font-medium">Well done!</span>
+        </p>
+        }
+      </div>
+    </app-main-desing-form>
+    <app-main-desing-form [title]="'Host\'s Company'">
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          formControlName="hostCompany"
+          type="text"
+          name="floating_hostCompany"
+          id="floating_id"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        />
+        <label
+          for="floating_hostCompany"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Visitor\'s ID</label
+        >
+        <div class="handel-error">
+          @if (hostCompany?.errors?.['required'] && registerFormHost.touched ) {
+
+          <!-- Error messages -->
+          <p
+            id="standard_error_help"
+            class="mt-2 text-xs text-red-600 dark:text-red-400"
+          >
+            <span class="font-medium">Oh, snapp!</span> must enter Host Company
+            information
+          </p>
+          }
+        </div>
+        <div class="handel-success">
+          @if (!hostCompany?.errors?.['required'] && registerFormHost.touched )
+          {
+
+          <!-- success messages -->
+          <p
+            id="filled_success_help"
+            class="mt-2 text-xs text-green-600 dark:text-green-400"
+          >
+            <span class="font-medium">Well done!</span>
+          </p>
+          }
+        </div>
+      </div>
+    </app-main-desing-form>
+    <app-main-desing-form [title]="'Visitor\'s Jop Title'">
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          formControlName="hostJopTitle"
+          type="text"
+          name="hostJopTitle"
+          id="hostJopTitle"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        />
+        <label
+          for="floating_email"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Host Jop Title</label
+        >
+        <div class="handel-error">
+          @if (hostJopTitle?.errors?.['required'] && registerFormHost.touched )
+          {
+
+          <!-- Error messages -->
+          <p
+            id="standard_error_help"
+            class="mt-2 text-xs text-red-600 dark:text-red-400"
+          >
+            <span class="font-medium">Oh, snapp!</span> must enter Host Jop
+            Title
+          </p>
+          }
+        </div>
+        <div class="handel-success">
+          @if (!hostJopTitle?.errors?.['required'] && registerFormHost.touched )
+          {
+
+          <!-- success messages -->
+          <p
+            id="filled_success_help"
+            class="mt-2 text-xs text-green-600 dark:text-green-400"
+          >
+            <span class="font-medium">Well done!</span>
+          </p>
+          }
+        </div>
+      </div>
+    </app-main-desing-form>
+    <app-main-desing-form [title]="'Host Phone'">
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          formControlName="hostPhone"
+          type="text"
+          id="hostPhone"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        />
+        <label
+          for="hostPhone"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Vehicle Plate</label
+        >
+        <div class="handel-error">
+          @if (hostPhone?.errors?.['required'] && registerFormHost.touched ) {
+
+          <!-- Error messages -->
+          <p
+            id="standard_error_help"
+            class="mt-2 text-xs text-red-600 dark:text-red-400"
+          >
+            <span class="font-medium">Oh, snapp!</span> must enter Host Phone
+          </p>
+          }
+        </div>
+        <div class="handel-success">
+          @if (!hostPhone?.errors?.['required'] && registerFormHost.touched ) {
+
+          <!-- success messages -->
+          <p
+            id="filled_success_help"
+            class="mt-2 text-xs text-green-600 dark:text-green-400"
+          >
+            <span class="font-medium">Well done!</span>
+          </p>
+          }
+        </div>
+      </div>
+    </app-main-desing-form>
+    <app-main-desing-form [title]="'Host Email'">
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          formControlName="hostEmail"
+          type="text"
+          id="hostEmail"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        />
+        <label
+          for="hostEmail"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Host Email</label
+        >
+        <div class="handel-error">
+          @if (hostEmail?.errors?.['required'] && registerFormHost.touched ) {
+
+          <!-- Error messages -->
+          <p
+            id="standard_error_help"
+            class="mt-2 text-xs text-red-600 dark:text-red-400"
+          >
+            <span class="font-medium">Oh, snapp!</span> must enter Host Email
+          </p>
+          }
+        </div>
+        <div class="handel-success">
+          @if (!hostEmail?.errors?.['required'] && registerFormHost.touched ) {
+
+          <!-- success messages -->
+          <p
+            id="filled_success_help"
+            class="mt-2 text-xs text-green-600 dark:text-green-400"
+          >
+            <span class="font-medium">Well done!</span>
+          </p>
+          }
+        </div>
+      </div>
+    </app-main-desing-form>
+
+    <div class="btns flex justify-between">
+      <button
+        type="submit"
+        class="btn-submit"
+        class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+        (click)="emitValue(this.registerFormHost.valid)"
+      >
+        Submit
+      </button>
+
+      <button
+        type="button"
+        class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+        (click)="backToPrevious()"
+      >
+        Back
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,13 @@
+<div
+  class="data-format text-start bg-white py-4 px-4 my-3 main-form capitalize"
+  [ngClass]="{ headerInputTitle: firstInputInPage }"
+>
+  <p class="mb-3">{{ title }} <span class="text-red-700">*</span></p>
+  <p class="mb-3">
+    <small class="text-gray-400 font-medium">
+      {{ description }}
+    </small>
+  </p>
+  <!-- Form fields go here -->
+  <ng-content></ng-content>
+</div>
