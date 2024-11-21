@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.main-color {
+  color: #243e52;
+}
+
+.main-form {
+  border-radius: 10px;
+}
+.headerInputTitle {
+  border-radius: 10px;
+  border-top: 10px solid #243e52;
+}

@@ -1,1 +1,323 @@
-<p>visitor works!</p>
+<div class="visitor-data max-w-3xl mx-auto">
+  <form
+    [formGroup]="registerFormVisitor"
+    (ngSubmit)="onSubmit(registerFormVisitor)"
+  >
+    <app-main-desing-form
+      [firstInputInPage]="true"
+      [title]="'Visitor\'s Full Name'"
+    >
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          formControlName="visitorfullName"
+          type="email"
+          name="floating_email"
+          id="floating_email"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        />
+        <label
+          for="floating_email"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Visitor's Full Name</label
+        >
+      </div>
+      <div class="handel-error">
+        @if (visitorfullName?.errors?.['required'] &&
+        registerFormVisitor.touched ) {
+
+        <!-- Error messages -->
+        <p
+          id="standard_error_help"
+          class="mt-2 text-xs text-red-600 dark:text-red-400"
+        >
+          <span class="font-medium">Oh, snapp!</span> must enter your name
+        </p>
+        }
+      </div>
+      <div class="handel-success">
+        @if (!visitorfullName?.errors?.['required'] &&
+        registerFormVisitor.touched ) {
+
+        <!-- success messages -->
+        <p
+          id="filled_success_help"
+          class="mt-2 text-xs text-green-600 dark:text-green-400"
+        >
+          <span class="font-medium">Well done!</span>
+        </p>
+        }
+      </div>
+    </app-main-desing-form>
+    <app-main-desing-form [title]="'Visitor\'s ID'">
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          formControlName="visitorId"
+          type="text"
+          name="floating_id"
+          id="floating_id"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        />
+        <label
+          for="floating_email"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Visitor\'s ID</label
+        >
+        <div class="handel-error">
+          @if (visitorId?.errors?.['required'] && registerFormVisitor.touched )
+          {
+
+          <!-- Error messages -->
+          <p
+            id="standard_error_help"
+            class="mt-2 text-xs text-red-600 dark:text-red-400"
+          >
+            <span class="font-medium">Oh, snapp!</span> must enter your Id
+          </p>
+          }
+        </div>
+        <div class="handel-success">
+          @if (!visitorId?.errors?.['required'] && registerFormVisitor.touched )
+          {
+
+          <!-- success messages -->
+          <p
+            id="filled_success_help"
+            class="mt-2 text-xs text-green-600 dark:text-green-400"
+          >
+            <span class="font-medium">Well done!</span>
+          </p>
+          }
+        </div>
+      </div>
+    </app-main-desing-form>
+    <app-main-desing-form [title]="'Visitor\'s Company Name'">
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          formControlName="visitorCompany"
+          type="text"
+          name="floating_Company"
+          id="floating_Company"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        />
+        <label
+          for="floating_email"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Visitor's Company Name</label
+        >
+        <div class="handel-error">
+          @if (visitorCompany?.errors?.['required'] &&
+          registerFormVisitor.touched ) {
+
+          <!-- Error messages -->
+          <p
+            id="standard_error_help"
+            class="mt-2 text-xs text-red-600 dark:text-red-400"
+          >
+            <span class="font-medium">Oh, snapp!</span> must enter your Compamy
+            Name
+          </p>
+          }
+        </div>
+        <div class="handel-success">
+          @if (!visitorCompany?.errors?.['required'] &&
+          registerFormVisitor.touched ) {
+
+          <!-- success messages -->
+          <p
+            id="filled_success_help"
+            class="mt-2 text-xs text-green-600 dark:text-green-400"
+          >
+            <span class="font-medium">Well done!</span>
+          </p>
+          }
+        </div>
+      </div>
+    </app-main-desing-form>
+    <app-main-desing-form [title]="'Vehicle Plate (Letters)'">
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          formControlName="visitorVehicleLetters"
+          type="text"
+          id="floating_Vehicle_letters"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        />
+        <label
+          for="floating_Vehicle_letters"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Vehicle Plate</label
+        >
+        <div class="handel-error">
+          @if (visitorVehicleLetters?.errors?.['required'] &&
+          registerFormVisitor.touched ) {
+
+          <!-- Error messages -->
+          <p
+            id="standard_error_help"
+            class="mt-2 text-xs text-red-600 dark:text-red-400"
+          >
+            <span class="font-medium">Oh, snapp!</span> must enter your Vehicle
+            Plate
+          </p>
+          }
+        </div>
+        <div class="handel-success">
+          @if (!visitorVehicleLetters?.errors?.['required'] &&
+          registerFormVisitor.touched ) {
+
+          <!-- success messages -->
+          <p
+            id="filled_success_help"
+            class="mt-2 text-xs text-green-600 dark:text-green-400"
+          >
+            <span class="font-medium">Well done!</span>
+          </p>
+          }
+        </div>
+      </div>
+    </app-main-desing-form>
+    <app-main-desing-form [title]="'Vehicle Plate (Numbers)'">
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          formControlName="visitorVehicleNumbers"
+          type="text"
+          id="floating_Vehicle_number"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        />
+        <label
+          for="floating_Vehicle_number"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Vehicle Plate (Numbers)</label
+        >
+        <div class="handel-error">
+          @if (visitorVehicleNumbers?.errors?.['required'] &&
+          registerFormVisitor.touched ) {
+
+          <!-- Error messages -->
+          <p
+            id="standard_error_help"
+            class="mt-2 text-xs text-red-600 dark:text-red-400"
+          >
+            <span class="font-medium">Oh, snapp!</span> must enter your Vehicle
+            Numbers
+          </p>
+          }
+        </div>
+        <div class="handel-success">
+          @if (!visitorVehicleNumbers?.errors?.['required'] &&
+          registerFormVisitor.touched ) {
+
+          <!-- success messages -->
+          <p
+            id="filled_success_help"
+            class="mt-2 text-xs text-green-600 dark:text-green-400"
+          >
+            <span class="font-medium">Well done!</span>
+          </p>
+          }
+        </div>
+      </div>
+    </app-main-desing-form>
+    <app-main-desing-form [title]="'Visitor\'s Mobile Number'">
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          formControlName="visitorPhone"
+          type="text"
+          id="floating_Vehicle_phone"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        />
+        <label
+          for="floating_Vehicle_phone"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Visitor's Mobile Number
+        </label>
+        <div class="handel-error">
+          @if (visitorPhone?.errors?.['required'] && registerFormVisitor.touched
+          ) {
+
+          <!-- Error messages -->
+          <p
+            id="standard_error_help"
+            class="mt-2 text-xs text-red-600 dark:text-red-400"
+          >
+            <span class="font-medium">Oh, snapp!</span> must enter your Phone
+            Numbers
+          </p>
+          }
+        </div>
+        <div class="handel-success">
+          @if (!visitorPhone?.errors?.['required'] &&
+          registerFormVisitor.touched ) {
+
+          <!-- success messages -->
+          <p
+            id="filled_success_help"
+            class="mt-2 text-xs text-green-600 dark:text-green-400"
+          >
+            <span class="font-medium">Well done!</span>
+          </p>
+          }
+        </div>
+      </div>
+    </app-main-desing-form>
+    <app-main-desing-form [title]="'Visitor\'s Email'">
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          formControlName="visitorEmail"
+          type="text"
+          id="floating_Visitor's Email"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        />
+        <label
+          for="floating_Visitor's Email"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Visitor's Email</label
+        >
+        <div class="handel-error">
+          @if (visitorEmail?.errors?.['required'] && registerFormVisitor.touched
+          ) {
+
+          <!-- Error messages -->
+          <p
+            id="standard_error_help"
+            class="mt-2 text-xs text-red-600 dark:text-red-400"
+          >
+            <span class="font-medium">Oh, snapp!</span> must enter your Email
+          </p>
+          }
+        </div>
+        <div class="handel-success">
+          @if (!visitorEmail?.errors?.['required'] &&
+          registerFormVisitor.touched ) {
+
+          <!-- success messages -->
+          <p
+            id="filled_success_help"
+            class="mt-2 text-xs text-green-600 dark:text-green-400"
+          >
+            <span class="font-medium">Well done!</span>
+          </p>
+          }
+        </div>
+      </div>
+    </app-main-desing-form>
+
+    <div class="btns flex justify-between">
+      <button
+        type="submit"
+        class="btn-submit"
+        class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+        (click)="isFormValidGoNext(this.registerFormVisitor.valid)"
+      >
+        Next
+      </button>
+
+      <button
+        type="button"
+        class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+        (click)="backToPrevious()"
+      >
+        Back
+      </button>
+    </div>
+  </form>
+</div>
