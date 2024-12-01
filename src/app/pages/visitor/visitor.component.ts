@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormDataService } from '../../core/service/formdata.service';
 import { MainDesingFormComponent } from '../../shared/main-desing-form/main-desing-form.component';
 
 @Component({
@@ -16,15 +17,18 @@ import { MainDesingFormComponent } from '../../shared/main-desing-form/main-desi
   styleUrl: './visitor.component.scss',
 })
 export class VisitorComponent {
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
-  @Output() isVisitorFillAllData: EventEmitter<boolean> = new EventEmitter();
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private _FormDataService: FormDataService
+  ) {}
   registerFormVisitor: FormGroup = this.formBuilder.group({
     visitorfullName: ['', Validators.required],
     visitorId: ['', Validators.required],
     visitorCompany: ['', Validators.required],
     visitorVehicleLetters: ['', Validators.required],
-    visitorVehicleNumbers: ['', Validators.required],
-    visitorPhone: ['', Validators.required],
+    visitorVehicleNumbers: [null, Validators.required],
+    visitorPhone: [null, Validators.required],
     visitorEmail: ['', Validators.required],
   });
   get visitorfullName() {
@@ -58,9 +62,18 @@ export class VisitorComponent {
     this.router.navigate(['/visit-data']);
   }
   onSubmit(registerFormVisitor: FormGroup) {
-    if (!registerFormVisitor.valid) {
+    if (registerFormVisitor.valid) {
+      this.insertVistorDataFrom();
+    } else {
       this.registerFormVisitor.markAllAsTouched();
     }
-    console.log(registerFormVisitor.value);
+  }
+
+  insertVistorDataFrom(): void {
+    const currentData = this._FormDataService.formData.value;
+    this._FormDataService.formData.next({
+      ...currentData,
+      ...this.registerFormVisitor.value,
+    });
   }
 }

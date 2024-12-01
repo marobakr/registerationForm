@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormDataService } from '../../core/service/formdata.service';
 import { MainDesingFormComponent } from '../../shared/main-desing-form/main-desing-form.component';
 
 @Component({
@@ -17,7 +18,11 @@ import { MainDesingFormComponent } from '../../shared/main-desing-form/main-desi
   styleUrl: './visit-data.component.scss',
 })
 export class VisitDataComponent {
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private _formDataService: FormDataService
+  ) {}
   @Output() ValidationOfVisitData: EventEmitter<boolean> = new EventEmitter();
 
   date: string = 'date of Visit';
@@ -47,8 +52,16 @@ export class VisitDataComponent {
     }
   }
 
+  insertVistoDataFrom(): void {
+    const currentData = this._formDataService.formData.value;
+    this._formDataService.formData.next({
+      ...currentData,
+      ...this.registerFormVisit.value,
+    });
+  }
   isFormValidGoNext(value: boolean): void {
     if (value) {
+      this.insertVistoDataFrom();
       this.router.navigate(['/visitor-data']);
     }
   }

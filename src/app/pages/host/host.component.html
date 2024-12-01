@@ -131,7 +131,7 @@
       <div class="relative z-0 w-full mb-5 group">
         <input
           formControlName="hostPhone"
-          type="text"
+          type="number"
           id="hostPhone"
           class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
         />
@@ -170,7 +170,7 @@
       <div class="relative z-0 w-full mb-5 group">
         <input
           formControlName="hostEmail"
-          type="text"
+          type="email"
           id="hostEmail"
           class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
         />
@@ -211,7 +211,6 @@
         type="submit"
         class="btn-submit"
         class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-        (click)="emitValue(this.registerFormHost.valid)"
       >
         Submit
       </button>
